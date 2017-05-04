@@ -23,5 +23,12 @@ $(function(){
 		})
 		
 	});
+	$(function(){
+		$('#btn2').on('click',function(){
+			$('#box').remove();
+//			$('#box').empty();
+			
+		})
+	});
 	
 });
