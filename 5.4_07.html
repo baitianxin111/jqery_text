@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/5.4_07.js"></script>
+		<style media="screen">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			p{
+				width: 60px;
+				height: 60px;
+				background-color: red;
+				position: absolute;
+				left: 100px;
+				top: 100px;
+			}
+			.box2{
+				top: 300px;
+			}
+			.div3{
+				width: 200px;
+				padding: 50px;
+				height: 200px;
+				background: green;
+				border: 3px dashed yellow;
+				margin: 10px auto;
+				
+			}
+			.style1{
+				width: 150px;
+				height: 150px;
+				background: purple;
+			}
+			.style2{
+				width: 180px;
+				height: 180px;
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<div class="div3">1325346</div>
+		<button>click me</button>
+		<p class="box1"></p>
+		<p class="box2"> </p>
+		
+	</body>
+	<script>
+//		$('p').animate({'left':1000},2000);
+//		$('p').animate({'left':1000},2000,function(){
+//			$(this).css('background-color','yellow');
+//			//回掉会输，当动画执行完毕后执行这个函数
+//		})
+//动画排队，都是box1在动，所以排队，当一个动画执行完，在执行下一个动画
+		$('.box1').animate({'left':1000},2000);
+		$('.box1').animate({'top':-400},2000);
+		$('.box1').animate({'top':-400,'left':1000},2000);
+	</script>
+</html>
