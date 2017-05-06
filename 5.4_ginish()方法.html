@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/5.4_07.js"></script>
+		<style>
+			.block{
+				width:100px;
+				height:100px;				
+				position:absolute;
+				top: 100px;
+				background:red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="block">
+			
+		</div>
+		<p>13</p>
+		<input type="button" name="" id="" value="finish()" />
+	</body>
+	<script>
+	 // 停止当前正在运行的动画，
+        // 删除所有排队的动画，
+        // 并完成匹配元素所有的动画。
+		$(".block").animate({left: '+200px'}, 2000);
+        $(".block").animate({top: '+200px'}, 2000);
+        $(".block").animate({left: '+200px'}, 2000);
+        $(".block").animate({top: 0}, 2000);
+        $('input:eq(0)').click(function(){
+        	$('.block').finish();
+        })
+//	     $('p')[0].style.backgroundColor='red';
+        $('p').get(0).style.backgroundColor='yellow';
+        
+	</script>
+</html>

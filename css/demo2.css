@@ -1,0 +1,65 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+#box{
+	width: 400px;
+	height:30px ;
+	/*border: 1px solid red;*/
+}
+ul{
+	list-style: none;
+	 
+}
+ul li {
+	width: 98px;
+	height: 30px;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+	/*margin: 100px auto;*/
+	/*margin-left: 100px;*/
+	cursor: pointer;
+	border: 1px solid #CCCCCC;
+}
+ul li a {
+	text-decoration: none;
+}
+ ul li a:hover
+{
+	color: red;
+}
+img{
+	float: left;
+}
+ .con{
+ 	display: none;
+	float: left;	 
+	width: 400px;
+	height: 100px;
+	/*border: 1px solid red;*/
+	
+}
+.con ul{
+	list-style: none;
+}
+.con ul li {
+	width: 400px;
+	height: 50px;
+	float: left;
+	
+}
+.div1{
+	display: block;
+	width: 100px;
+	height: 150px;
+	/*background: url(../img/xiaotu.png)no-repeat center center;*/
+	 
+}
+#bigdiv{
+	display:  none;
+	position: absolute;
+	left: 100px;
+}
+ 

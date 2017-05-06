@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<button>up</button>
+		<button>down</button>
+		<button>toggle</button>
+		<br />
+		<img src="img/image.jpg" width="130px" height="150px"/>
+	</body>
+	<script>
+		$(function(){
+			$('button').eq(0).click(function(){
+				$('img').slideUp('fast');
+//				$('img').slideUp('normal');
+			});
+			$('button').eq(1).click(function(){
+				$('img').slideDown(2000);
+			});
+			$('button').eq(2).click(function(){
+				$('img').slideToggle(2000);
+			});
+			
+		});
+	</script>
+</html>

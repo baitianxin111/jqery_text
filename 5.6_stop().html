@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/5.4_07.js"></script>
+		<style type="text/css">
+			 .block{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+            }
+		</style>
+	</head>
+	<body>
+		 <button id="go">Go</button>
+        <input type="button" name="" value="stop()">
+        <input type="button" name="" value="stop(ture)">
+        <input type="button" name="" value="stop(ture,true)">
+        <input type="button" name="" value="stop(false,true)">
+        <input type="button" name="" value="stop(false,false)">
+        <input type="button" name="" value="finish()">
+        <div class="block"></div>
+	</body>
+	<script>
+		$('#go').click(function(){
+			$('.block').animate({left:'+200px'},2000);
+			$('.block').animate({top:'+200px'},2000);
+			$('.block').animate({left:'+200px'},2000);
+			$('.block').animate({top:'0px'},2000);
+		});
+		$('input.eq(0)').click(function(){
+			$('div').stop();
+		});
+		$('input.eq(1)').click(function(){
+			$('div').stop(true);
+		});
+		$('input.eq(2)').click(function(){
+			$('div').stop(true,true);
+		});
+		$('input.eq(3)').click(function(){
+			$('div').stop(flase,true);
+		});
+		 // 立即执行完当前队列然后正常执行下一个队列
+        $("input:eq(4)").click(function(){
+            $("div").stop(false,false);
+        })
+        // 停止当前正在运行的动画，
+        // 删除所有排队的动画，
+        // 并完成匹配元素所有的动画。
+        $("input:eq(5)").click(function(){
+            $("div").finish();
+        })
+	</script>
+</html>
