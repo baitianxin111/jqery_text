@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<script src="js/jquery.min.js"></script>
+		<title></title>
+		 <style media="screen">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .box{
+                padding-top: 300px;
+                position: relative;
+            }
+            .box1{
+                margin-top: 100px;
+                background: yellowgreen;
+            }
+        </style>
+	</head>
+	<body>
+		<div class="box">
+            <div class="box1">
+                <p>hello world</p>
+            </div>
+        </div>
+	</body>
+	<script>
+		var dom=$('p').offset().top;
+		console.log(dom);
+	</script>
+</html>

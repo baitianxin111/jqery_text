@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<script src="js/jquery.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.nav{
+				width: 400px;
+				height: 50px;
+				
+				margin: 100px auto;
+				background: green;
+			}
+			ul{
+				list-style: none;
+			}
+		.nav ul	li{
+				width: 100px;
+				height: 50px;
+				float: left;
+				text-align: center;
+				line-height: 50px;
+				
+				/*margin-left: 50px;*/
+			}
+			a{
+				color: white;
+				text-decoration: none;
+			}
+			.nav ul li #dropbox{
+				background: grey;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<ul>
+				<li><a href="">坦克</a></li>
+				<li><a href="">刺客</a>
+					<div id="dropbox">
+						<p><a href="">礼拜</a></p>
+						<p><a href="">杜甫</a></p>
+						<p><a href="">荆轲</a></p>
+					</div>
+				</li>
+				<li><a href="">法师</a>
+					<div id="dropbox">
+						<p><a href="">大桥</a></p>
+						<p><a href="">下桥</a></p>
+						<p><a href="">阿里</a></p>
+					</div>
+				</li>
+				<li><a href="">射手</a>
+					<div id="dropbox">
+						<p><a href="">貂蝉</a></p>
+						<p><a href="">网</a></p>
+						<p><a href="">是否</a></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		$(function(){
+//			 // 在导航上面快速滑动好几次，就会抽风
+//			$('li').mouseenter(function(){
+//				$(this).find('#dropbox').slideDown();
+//			});
+//			$('li').mouseleave(function(){
+//				$(this).find('#dropbox').slideUp();
+//			});
+			//正常的水平导航
+			 // 在导航上面快速滑动好几次，就会抽风
+        $("li").mouseenter(function(){
+            // 函数节流
+            var self = $(this).find("#dropbox");
+            if(self.is(":animated")){
+                return;
+            }
+            self.slideDown();
+        })
+
+        $("li").mouseleave(function(){
+            var self = $(this).find("#dropbox");
+            self.slideUp();
+        })
+		})
+	</script>
+</html>

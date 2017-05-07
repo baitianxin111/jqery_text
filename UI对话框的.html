@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="js/jquery.min.js"></script>
+		<title></title>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id="dialog">
+			<p>
+				This is an animated dialog 
+				which is useful for displaying information. 
+				The dialog window can be moved, 
+				resized and closed with the 'x' icon.
+			</p>
+		</div>
+		<button id="open"> Open Dialog</button>
+	</body>
+	<script>
+		$(function(){
+		 
+			$('#dialog').dialog({
+				autoOpen:false,
+				show:{
+					effect:"blind",
+					duration:1000
+					
+				},
+				hide:{
+					effect:"explode",
+					duration:1000
+				}
+			});
+			$('#open').on('click',function(){
+//				$('#open').openDialog(true);
+				$('#dialog').dialog('open');
+			});
+		});
+	</script>
+</html>

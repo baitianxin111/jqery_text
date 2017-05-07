@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>	
+	</head>
+	<body>
+		 <div></div>
+        <div class="stark" data-test="this is test" ></div>
+	</body>
+	<script> 
+	$(function(){
+		   $("div").data("blah");  // undefined
+           $("div").data("blah", "hello");  // blah设置为hello
+           $("div").data("blah");  // hello
+           $("div").data("blah", 86);  // 设置为86
+           $("div").data("blah");  //  86
+        // $("div").removeData("blah");  //移除blah
+        // $("div").data("blah");  // undefined
+
+           console.log($("div").data("blah"));
+           console.log($("div").data("blah", "hello"));
+           console.log($("div").data("blah"));
+        // console.log($("div").removeData("blah"));
+        // console.log($("div").data("blah"));
+
+        // 可以在dom上面设置属性并且读取，可以自定义规则
+        // 比如 data-[key] = [value]
+//      console.log($(".stark").data("test"));
+	});
+	</script>
+</html>

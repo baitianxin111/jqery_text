@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		 <style media="screen">
+            div{
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                background-color: orange;
+                left: 100px;
+                top: 100px;
+            }
+        </style>
+	</head>
+	<body>
+		<input type="button" name="" value="到100">
+            <input type="button" name="" value="到900">
+            <div class="">
+
+            </div>
+	</body>
+	<script>
+		$(function(){
+			$('input:eq(0)').click(function(){
+				if ($('div').is(':animated')) {
+					return;
+					
+				}
+				$('div').animate({'left':100},1000);
+			});
+			$('input:eq(1)').click(function(){
+				if ($('div').is(':animated')) {
+					return;
+					
+				}
+				$('div').animate({'left':900},1000);
+			});
+		});
+	</script>
+</html>

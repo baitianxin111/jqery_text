@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		<style type="text/css">
+			img{
+				/*width: 200px;
+				height: 150px;*/
+				position: absolute;
+				display: none;
+			}
+			.img2{
+				top :200px;
+				left: 340px;
+				
+			}
+			.img3{
+				left: 100px;
+				top: 290px;
+			}
+			.img4{
+				left: 290px;
+				top: 390px;
+			}
+			.img5{
+			right: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<img class="img1" src="img/mm1.jpg" alt="" />
+		<img class="img2" src="img/mm2.jpg" alt="" />
+		<img class="img3" src="img/mm3.jpg" alt="" />
+		<img  class="img4"src="img/mm4.jpg" alt="" />
+		<img  class="img5"src="img/mm5.jpg" alt="" />
+	</body>
+	<script>
+		$(function(){
+			var i=0;
+			$('img').each(function(i){
+				$(this).delay(i*500).fadeIn(1000);
+			})
+			
+		})
+	</script>
+</html>
