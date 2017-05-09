@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			 <link rel="stylesheet" href="./js/jquery-ui.min.css">
+        <script src="jquery.js" charset="utf-8"></script>
+        <script src="js/jquery-ui.min.js" charset="utf-8"></script>
+		<title></title>
+		 <style>
+            #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+          #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+          .ui-state-highlight{
+              background-color: red;
+              width: 100px;
+              height: 100px;
+          }
+          </style>
+         </style>
+       
+	</head>
+	<body>
+		 <div id="draggable" class="ui-widget-content">
+            <p>Drag me to my target</p>
+        </div>
+
+<div id="droppable" class="ui-widget-header">
+  <p>请拖到这里来</p>
+</div>
+
+	</body>
+	 <script>
+	 	$(function(){
+	 		$('#draggable').draggable();
+	 		$('#draggable').draggable({
+	 			drop:function(event,ui){
+	 				$(this)
+	 				.addClass('ui-state-highlight');
+	 				 .find('p')
+	 				.html('ok');
+	 			}
+	 		});
+	 	});
+	 </script>
+</html>

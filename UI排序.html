@@ -2,7 +2,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="js/jquery-ui.min.css" />
 		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		 
 		<title></title>
 		<style type="text/css">
 			 #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
@@ -12,19 +15,20 @@
 	</head>
 	<body>
 		 <ul id="sortable">
-          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
           <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
           <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
           <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
           <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
           <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+          <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
         </ul>
 	</body>
 	<script>
 		$(function(){
-			$('#sortable').sort();
-//			$('#sortable
+			//这个没做对
+			 $('#sortable').sortable();
+			 $('#sortable').disableSelection();
 		})
 	</script>
 </html>

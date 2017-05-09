@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<script src="js/jquery.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="username" id="username" value="" />
+		<br />
+		<button id="btn">send</button>
+		<span id="result"></span>
+	</body>
+	<script>
+		$(function(){
+//			$('#btn').on('click',function(){
+////				alert(111);
+//				$.get('ajax/test.php',{name:$('#username').val()},function(data){
+//					$('#result').text(data);
+//				});
+//			});
+			$('#username').on('input',function(){
+			var userInput=$('#username').val();
+			var reg=/^1\d{10}/;
+			$.post('test.php',{name:userInput},function(data){
+					if(reg.test(userInput))
+					{
+						$('#result').text(data);
+						alert(ok!'');
+					}
+					else
+					{
+					alert(error!);
+					}
+				});
+			}) ;
+			
+		});
+	</script>
+	
+</html>

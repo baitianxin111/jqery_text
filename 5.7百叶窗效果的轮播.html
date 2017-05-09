@@ -37,16 +37,36 @@
 			.box ul  .img5{
 				left: 525px;
 			}
+			.mask{
+				width: 640px;
+				height: 270px;
+				background: #000;
+				opacity: 0.4;
+				position: absolute;
+				/*z-index: 999;*/
+				top: 0;
+				left: 0;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="box">
 			<ul>
-			<li class="img1"><a href=""><img src="img/1.jpg" alt="" /></a></li>
-			<li class="img2"><a href=""><img src="img/2.jpg" alt="" /></a></li>
-			<li class="img3"><a href=""><img src="img/3.jpg" alt="" /></a></li>
-			<li class="img4"><a href=""><img src="img/4.jpg" alt="" /></a></li>
-			<li class="img5"><a href=""><img src="img/5.jpg" alt="" /></a></li>
+			<li class="img1"><a href=""><img src="img/1.jpg" alt="" /></a>
+				<div class="mask"></div>
+			</li>
+			<li class="img2"><a href=""><img src="img/2.jpg" alt="" /></a>
+				<div class="mask"></div>
+			</li>
+			<li class="img3"><a href=""><img src="img/3.jpg" alt="" /></a>
+				<div class="mask"></div>
+			</li>
+			<li class="img4"><a href=""><img src="img/4.jpg" alt="" /></a>
+				<div class="mask"></div>
+			</li>
+			<li class="img5"><a href=""><img src="img/5.jpg" alt="" /></a>
+			<div class="mask"></div>
+			</li>
 			<!--<li class="img6"><a href=""><img src="img/6.jpg" alt="" /></a></li>-->
 		</ul>
 		</div>
@@ -54,42 +74,62 @@
 	</body>
 	<script>
 		$(function(){
-			$('.img1').mouseenter(function(){
-				$('.img2').animate({'left':640},2000);
-				$('.img3').animate({'left':740},2000);
-				$('.img4').animate({'left':840},2000);
-				$('.img5').animate({'left':940},2000);
+//			$('.img1').mouseenter(function(){
+//				$('.img2').animate({'left':640},2000);
+//				$('.img3').animate({'left':740},2000);
+//				$('.img4').animate({'left':840},2000);
+//				$('.img5').animate({'left':940},2000);
+//			});
+//			$('.img2').mouseenter(function(){
+//				$('.img2').animate({'left':100},2000);
+//				$('.img3').animate({'left':740},2000);
+//				$('.img4').animate({'left':840},2000);
+//				$('.img5').animate({'left':940},2000);
+//			});
+//			$('.img3').mouseenter(function(){
+//				$('.img2').animate({'left':640},2000);
+//				$('.img3').animate({'left':200},2000);
+//				$('.img4').animate({'left':840},2000);
+//				$('.img5').animate({'left':940},2000);
+//			});
+//			$('.img4').mouseenter(function(){
+//				$('.img2').animate({'left':640},2000);
+//				$('.img3').animate({'left':740},2000);
+//				$('.img4').animate({'left':300},2000);
+//				$('.img5').animate({'left':940},2000);
+//			});
+//			$('.img5').mouseenter(function(){
+//				$('.img2').animate({'left':640},2000);
+//				$('.img3').animate({'left':740},2000);
+//				$('.img4').animate({'left':840},2000);
+//				$('.img5').animate({'left':400},2000);
+//			});
+//			$('.box').mouseleave(function(){
+//				$('.img2').animate({'left':225},2000);
+//				$('.img3').animate({'left':325},2000);
+//				$('.img4').animate({'left':425},2000);
+//				$('.img5').animate({'left':525},2000);
+//			})
+			//另一种百叶窗的写法
+			$('.box ul li').mouseenter(function(){
+				$('li').stop(true);
+				var index=$(this).index();
+				$('.box ul li').each(function(i){
+					if (i<index) {
+						$(this).animate({'left':200*i},700);
+					} else{
+						$(this).animate({'left':200*(i-1)},700);
+						
+					}
+				});
+				$(this).find('.mask').stop(true).fadeOut()
 			});
-			$('.img2').mouseenter(function(){
-				$('.img2').animate({'left':100},2000);
-				$('.img3').animate({'left':740},2000);
-				$('.img4').animate({'left':840},2000);
-				$('.img5').animate({'left':940},2000);
-			});
-			$('.img3').mouseenter(function(){
-				$('.img2').animate({'left':640},2000);
-				$('.img3').animate({'left':200},2000);
-				$('.img4').animate({'left':840},2000);
-				$('.img5').animate({'left':940},2000);
-			});
-			$('.img4').mouseenter(function(){
-				$('.img2').animate({'left':640},2000);
-				$('.img3').animate({'left':740},2000);
-				$('.img4').animate({'left':300},2000);
-				$('.img5').animate({'left':940},2000);
-			});
-			$('.img5').mouseenter(function(){
-				$('.img2').animate({'left':640},2000);
-				$('.img3').animate({'left':740},2000);
-				$('.img4').animate({'left':840},2000);
-				$('.img5').animate({'left':400},2000);
-			});
-			$('.box').mouseleave(function(){
-				$('.img2').animate({'left':225},2000);
-				$('.img3').animate({'left':325},2000);
-				$('.img4').animate({'left':425},2000);
-				$('.img5').animate({'left':525},2000);
+			$('.box ul li').mouseleave(function(){
+				$(this).each(function(i){
+					  $(this).animate({"left": 225 * i},500)
+				})
 			})
+			
 		})
 	</script>
 </html>

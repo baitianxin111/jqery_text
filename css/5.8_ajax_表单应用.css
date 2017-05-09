@@ -1,0 +1,38 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+.main{
+	width:520px;
+	height: 385px;
+	margin: 100px auto;
+	/*background: gray;*/
+}
+.username,.userpwd,.login{
+	width: 400px;
+	height: 46px;
+	margin-top: 45px;
+	/*background: red;*/
+}
+ input {
+ 	margin-left: 40px;
+ 	width: 400px;
+	height: 46px;
+	text-align: left;
+	line-height: 46px;
+	padding-left: 10px;
+	
+	
+ }
+.btn{
+	width: 416px;
+	height: 46px;
+	margin-left: 40px;
+	text-align: center;
+	line-height: 46px;
+	 background: #91C7FB;
+}
+.name ,.pwd{
+	padding-left: 35px;
+}
